@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+      <form>
+        <div class="form-group">
+          <label for="firstName">First Name:</label>
+          <input required minlength="3" maxlength="10" pattern="banana" ngModel name="firstName" #firstName="ngModel" (change)="log(firstName)"
+            id="firstName" type="text" class="form-control">
+          <div class="alert alert-danger" *ngIf="firstName.touched && !firstName.valid">
+            <div *ngIf="firstName.errors.required">
+              First name is required
+            </div>
+            <div *ngIf="firstName.errors.minlength">
+              First name should be 3 characters
+            </div>
+            <div *ngIf="firstName.errors.pattern">
+              Dont match the pattern
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="comment">Coments:</label>
+          <textarea ngModel name="comment" id="comment" type="text" class="form-control" col="30" rows="10"></textarea>
+        </div>
+        <button class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+    
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+      <h4>Angular Routing Basic</h4>
+      <ul class="nav nav-tabs">
+        <!-- <li role="presentation" class="active">
+          <a href="#">Home</a>
+        </li> -->
+        <li role="presentation">
+          <a [routerLink]="['modal']" class="active">Modal</a>
+        </li>
+        <li role="presentation">
+          <a [routerLink]="['tooltip']">Tooltip</a>
+        </li>
+      </ul>
+      <div >
+        <router-outlet></router-outlet>
+      </div>
+
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,108 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">Angular Applications</div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-sm-12 col-md-12">
+
+        <!--NgIf then Else.-->
+
+        <h2>NgIf - Then - Else</h2>
+        <div style="text-align:center" *ngIf="courses.length > 0; then coursesList else noCourses">
+        </div>
+        <ng-template #coursesList>
+          <h5>List Of Courses Using NgIf then Else</h5>
+        </ng-template>
+        <ng-template #noCourses>
+          <h5>Nothing Courses using NgIf then Else</h5>
+        </ng-template>
+
+        <!--End NgIf then Else.-->
+
+        <!-- Hidden Property -->
+
+        <h2>Hidden Property</h2>
+        <div [hidden]="courses.length == 0">
+          <h5>List of Courses Property Hidden</h5>
+        </div>
+        <div [hidden]="courses.length > 0">
+          <h5>No Courses Yet Property Hidden</h5>
+        </div>
+        <br>
+
+        <!-- End Hidden Property -->
+
+        <!-- ng-switch ng-switchCase -->
+
+        <h2>ngSwitch - ngSwitchCase</h2>
+        <ul class="nav nav-pills">
+          <li [class.active]="viewMode == 'map'">
+            <a (click)="viewMode = 'map'">Map View</a>
+          </li>
+          <li [class.active]="viewMode == 'list'">
+            <a (click)="viewMode = 'list'">List View</a>
+          </li>
+        </ul>
+        <div [ngSwitch]="viewMode">
+          <div *ngSwitchCase="'map'">Map view content</div>
+          <div *ngSwitchCase="'list'">List view content</div>
+          <div *ngSwitchDefaul>Otherwise</div>
+        </div>
+        <br>
+
+        <!-- End ng-switch ng-switchCase -->
+
+        <!-- ngfor  index-->
+
+        <h2>NgFor index</h2>
+        <ul>
+          <li *ngFor="let course of coursesAng; index as i">
+            {{ i + 1 }} - {{course.name}}
+          </li>
+        </ul>
+
+        <!--End ngfor  -->
+
+        <!-- ngfor even-->
+
+        <h2>NgFor even</h2>
+        <ul>
+          <li *ngFor="let course of coursesAng; even as isEven">
+            {{course.name}}
+            <span *ngIf="isEven">(EVEN)</span>
+          </li>
+        </ul>
+
+        <!--End ngfor even-->
+
+        <!-- ngfor last-->
+
+        <h2>NgFor last</h2>
+        <ul>
+          <li *ngFor="let course of coursesAng; last as isEvent">
+            {{course.name}}
+            <span *ngIf="isEvent">(EVEN)</span> -
+
+            <button type="button" class="btn btn-danger" (click)="onRemove(course)">Remove</button>
+
+          </li>
+        </ul>
+
+        <!--End ngfor even-->
+
+        <button type="button" class="btn btn-primary" (click)="onAdd()">Add</button>
+
+        <!-- Two-way Binding and ngModel in Angular 4 -->
+
+        <h2>Two-way Binding and ngModel in Angular 4</h2>
+        <!-- <input type="email" class="form-control" [value]="email" (keyup.enter)="email = $event.target.value; onKeyUp()"> -->
+        <input type="email" class="form-control" [(ngModel)]="email" (keyup.enter)="onKeyUp()">
+        <p>Press ENTER and see the console</p>
+        <br>
+          
+        <!-- End Two-way Binding and ngModel in Angular 4 -->
+
+
+      </div>
+    </div>
+  </div>
+</div>

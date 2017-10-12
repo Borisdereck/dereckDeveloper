@@ -1,0 +1,15 @@
+<!-- Service Angular -->
+
+<h2>Employe Detail - Service Angular</h2>
+<h3>Name: </h3>
+<h5>{{employeObj.name}}</h5>
+<h3>City: </h3>
+<h5>{{employeObj.city}}</h5>
+<h3>Age: </h3>
+<h5>{{employeObj.age | percent}}</h5>
+
+<input type="text" [(ngModel)]="empId" class="form-control">
+<br>
+<button type="button" class="btn btn-primary" (click)="getEmployedetail()">Get Employe Id</button>
+
+<!-- End Service Angular -->

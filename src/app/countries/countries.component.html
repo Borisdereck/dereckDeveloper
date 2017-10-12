@@ -1,0 +1,25 @@
+<!-- Angular HTTP GET Service -->
+
+<h2>Angular HTTP GET Service</h2>
+
+<select class="form-control" [(ngModel)]="countriName">
+  <option *ngFor="let contry of contryList" value="{{contry.name}}" placeholder="">{{contry.name}}</option>
+</select>
+
+<img src="{{countryObj.flag}}" class="img-circle" width="100" height="100">
+<h3>Name: {{countryObj.name}}</h3>
+
+<h4>Capital: </h4>
+<h5>{{countryObj.capital}}</h5>
+<h4>Currency:</h4>
+<h5>{{countryObj.currencies[0].code}}</h5>
+<h4>Lenguage</h4>
+<h5>{{countryObj.languages[0].nativeName}}</h5>
+
+<input type="text" name="" class="form-control" placeholder="Enter the City" [(ngModel)]="countriName">
+<br>
+<button type="button" class="btn btn-primary" (click)="getCapitalInfo()">Get Info</button>
+<br>
+
+<!-- End Angular HTTP GET Service -->
+
