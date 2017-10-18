@@ -9,8 +9,8 @@ import { CountriesInfoService } from "../services/countries-info.service";
 })
 export class CountriesComponent implements OnInit {
 
-  public countryObj: any = null;
-  public countriName: string = '';
+  public countryObj: any;
+  public countriName: string;
   public contryList: any;
 
  

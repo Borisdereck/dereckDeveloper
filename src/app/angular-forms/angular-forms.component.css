@@ -1,0 +1,6 @@
+[name=name].ng-invalid{
+  border-left: 7px solid red;
+}
+[name=name].ng-valid{
+  border-left: 7px solid green;
+}

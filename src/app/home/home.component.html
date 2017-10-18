@@ -98,10 +98,31 @@
         <input type="email" class="form-control" [(ngModel)]="email" (keyup.enter)="onKeyUp()">
         <p>Press ENTER and see the console</p>
         <br>
-          
+
         <!-- End Two-way Binding and ngModel in Angular 4 -->
 
+        <!-- Components using @Input () and @Output () -->
+        <h2>Components using @Input () and @Output ()</h2>
+        <h3>Employe Selected</h3>
+        <h3>Name: {{selectedEmployeData.selectedName}}</h3>
+        <h3>City: {{selectedEmployeData.selectedCity}}</h3>
+        <h3>Salary: {{selectedEmployeData.selectedSalary}}</h3>
+        <hr>
+        <br>
+        <h3>Employes Records</h3>
+        <app-input-output [name]='employe.eName' [city]='employe.ecity' [salary]='employe.eSalary' (sendRecord)="getRecord($event)"
+          *ngFor="let employe of employeRecord">
 
+        </app-input-output>
+
+
+        <!-- End Components using @Input () and @Output () -->
+
+        <!-- Angular Forms - Template Driven Form -->
+        <hr>
+
+        
+        <!-- Angular Forms - Template Driven Form -->
       </div>
     </div>
   </div>

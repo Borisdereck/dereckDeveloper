@@ -16,6 +16,14 @@ export class HomeComponent implements OnInit {
 
   email = "dereck@btg.com";
 
+  public employeRecord: any = [
+    { eName: 'boris', ecity: 'New york', eSalary: 5000 },
+    { eName: 'Jhon', ecity: 'Mumbay', eSalary: 70000 },
+    { eName: 'Roger', ecity: 'ranchi', eSalary: 80000 },
+    { eName: 'Steben', ecity: 'New york', eSalary: 5000 },
+
+  ];
+
   constructor() { }
 
   ngOnInit() {
@@ -35,6 +43,19 @@ export class HomeComponent implements OnInit {
 
   onKeyUp() {
     console.log(this.email);
+  }
+
+  public selectedEmployeData: any = {
+    selectedName: '',
+    selectedCity: '',
+    selectedSalary: ''
+  };
+  getRecord(data: any): void {
+    this.selectedEmployeData = data;
+    console.log(JSON.stringify(this.selectedEmployeData));
+    // console.log('Name: ' + this.selectedEmployeData.selectedName +
+    //   ', City: ' + this.selectedEmployeData.selectedCity +
+    //   ', Salary: ' + this.selectedEmployeData.selectedSalary );
   }
 
 }

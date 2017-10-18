@@ -8,6 +8,8 @@ import { CountriesComponent } from "./countries/countries.component";
 import { ModalComponent } from "./modal/modal.component";
 import { TooltipComponent } from "./tooltip/tooltip.component";
 import { ParameterComponent } from "./parameter/parameter.component";
+import { InputOutputComponent } from "./input-output/input-output.component";
+import { AngularFormsComponent } from "./angular-forms/angular-forms.component";
 
 
 
@@ -25,6 +27,8 @@ export const routes: Routes = [
       }
     ]
   },
+  { path: 'form', component: AngularFormsComponent },
+  { path: 'io', component: InputOutputComponent },
   { path: 'to-do', component: ToDoComponent },
   { path: 'employe', component: EmployeServiceComponent },
   { path: 'countries', component: CountriesComponent }

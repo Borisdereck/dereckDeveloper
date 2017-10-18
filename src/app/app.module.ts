@@ -18,6 +18,8 @@ import { CountriesComponent } from './countries/countries.component';
 import { ModalComponent } from './modal/modal.component';
 import { TooltipComponent } from './tooltip/tooltip.component';
 import { ParameterComponent } from './parameter/parameter.component';
+import { InputOutputComponent } from './input-output/input-output.component';
+import { AngularFormsComponent } from './angular-forms/angular-forms.component';
 
 
 @NgModule({
@@ -31,6 +33,8 @@ import { ParameterComponent } from './parameter/parameter.component';
     ModalComponent,
     TooltipComponent,
     ParameterComponent,
+    InputOutputComponent,
+    AngularFormsComponent,
     
   ],
   imports: [
